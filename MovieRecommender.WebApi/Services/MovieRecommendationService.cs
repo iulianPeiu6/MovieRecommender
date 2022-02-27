@@ -21,9 +21,18 @@ namespace MovieRecommender.WebApi.Services
             this.sendgridService = sendgridService;
         }
 
-        public IList<Movie> GetRecommendations()
+        public async Task<IList<Movie>> GetRecommendationsAsync()
         {
-            throw new NotImplementedException();
+            var movies = await tmdbService.GetMostPopularMoviesAsync();
+
+            foreach (var movie in movies)
+            {
+                var searchKey = $"{movie.Title}";
+                var traileryYutubeLink = await youtubeService.GetFirstSearchVideoLinkAsync(searchKey);
+                movie.TrailerYoutubeUrl = traileryYutubeLink;
+            }
+
+            return movies;
         }
 
         public bool SendRecommendationViaMail(IList<Movie> movies)

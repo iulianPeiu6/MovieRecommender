@@ -4,7 +4,7 @@ namespace MovieRecommender.WebApi.Services
 {
     public interface IMovieRecommendationService
     {
-        IList<Movie> GetRecommendations();
+        Task<IList<Movie>> GetRecommendationsAsync();
         bool SendRecommendationViaMail(IList<Movie> movies);
     }
 }

@@ -17,9 +17,10 @@ namespace MovieRecommender.WebApi.Controllers.v1
         }
 
         [HttpGet]
-        public IList<Movie> GetRecommendations()
+        public async Task<IList<Movie>> GetRecommendationsAsync()
         {
-            return movieRecommendationService.GetRecommendations();
+            var movies = await movieRecommendationService.GetRecommendationsAsync();
+            return movies;
         }
     }
 }
