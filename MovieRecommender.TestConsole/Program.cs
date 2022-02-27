@@ -6,6 +6,7 @@ using SendGrid.Options;
 using SendGrid.Services.Abstracts;
 using TMDb;
 using TMDb.Options;
+using TMDb.Services.Abstracts;
 using Youtube;
 using Youtube.Options;
 using Youtube.Services.Abstracts;
@@ -48,4 +49,6 @@ async Task RunTMDbConsoleTestsAsync()
         .BuildServiceProvider();
 
     var config = services.GetRequiredService<IOptions<TMDbConfiguration>>();
+    var tmdbService = services.GetRequiredService<ITMDbService>();
+    var result = await tmdbService.GetMostPopularMoviesAsync();
 }

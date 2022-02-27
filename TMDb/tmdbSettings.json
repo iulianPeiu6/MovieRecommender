@@ -2,7 +2,8 @@
   "TMDbConfig": {
     "ApiKey": "",
     "WebApiEndpoint": {
-      "DiscoverMovieV3": "https://api.themoviedb.org/3/discover/movie"
+      "DiscoverMovieV3": "https://api.themoviedb.org/3/discover/movie",
+      "Poster": "https://image.tmdb.org/t/p/original"
     }
   }
 }

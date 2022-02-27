@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using TMDb.Options;
+using TMDb.Services;
+using TMDb.Services.Abstracts;
 
 namespace TMDb
 {
@@ -18,6 +20,8 @@ namespace TMDb
                 .Build();
 
             services.Configure<TMDbConfiguration>(options => configuration.Bind("TMDbConfig", options));
+
+            services.AddTransient<ITMDbService, TMDbService>();
 
             return services;
         }
