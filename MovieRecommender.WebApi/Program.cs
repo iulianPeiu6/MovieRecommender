@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieRecommender.Application;
+using MovieRecommender.DataAccess;
 using SendGrid;
 using TMDb;
 using Youtube;
@@ -24,6 +25,7 @@ builder.Services.AddApiVersioning(config =>
 builder.Services.AddYoutube();
 builder.Services.AddSendGrid();
 builder.Services.AddTMDb();
+builder.Services.AddDataAccess();
 builder.Services.AddApplication();
 
 var app = builder.Build();

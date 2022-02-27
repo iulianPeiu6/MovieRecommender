@@ -29,7 +29,15 @@ namespace Youtube.Services
 
             var parsedResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
 
-            var videoId = parsedResponse.items[0].id.videoId;
+            var videoId = string.Empty;
+            try
+            {
+                videoId = parsedResponse?.items[0]?.id?.videoId;
+            }
+            catch
+            {
+                // Ignored
+            }
 
             return $"{config.WebUiEndpoint.Watch}?v={videoId}";
         }

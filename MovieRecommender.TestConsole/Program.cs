@@ -13,7 +13,7 @@ using Youtube.Services.Abstracts;
 
 //await RunYoutubeConsoleTestsAsync();
 //await RunSendGridConsoleTestsAsync();
-await RunTMDbConsoleTestsAsync();
+//await RunTMDbConsoleTestsAsync();
 
 async Task RunYoutubeConsoleTestsAsync()
 {

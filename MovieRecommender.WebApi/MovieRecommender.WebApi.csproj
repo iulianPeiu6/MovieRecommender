@@ -12,9 +12,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MovieRecommender.DataAccess\MovieRecommender.DataAccess.csproj" />
     <ProjectReference Include="..\SendGrid\SendGrid.csproj" />
     <ProjectReference Include="..\TMDb\TMDb.csproj" />
     <ProjectReference Include="..\Youtube\Youtube.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

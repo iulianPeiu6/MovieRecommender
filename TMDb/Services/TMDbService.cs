@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
+using MovieRecommender.Application.Interfaces;
 using MovieRecommender.Domain.Entities;
 using Newtonsoft.Json;
 using TMDb.Options;
@@ -9,7 +10,7 @@ namespace TMDb.Services
 {
     public class TMDbService : TMDbServiceBase, ITMDbService
     {
-        public TMDbService(IOptions<TMDbConfiguration> config) : base(config)
+        public TMDbService(IOptions<TMDbConfiguration> config, IRequestLogRepository repository) : base(config, repository)
         {
         }
 
@@ -30,12 +31,9 @@ namespace TMDb.Services
 
             var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-            var response = await client.SendAsync(request);
+            var response = await MakeRequest(request);
 
-            var responseContent = await response.Content.ReadAsStringAsync();
-
-            return GetmoviesFromResponse(responseContent);
-
+            return GetmoviesFromResponse(response);
         }
 
         private IList<Movie> GetmoviesFromResponse(string responseContent)
@@ -58,6 +56,9 @@ namespace TMDb.Services
                     NumberOfRatings = movie.vote_count
                 });
             }
+
+            movies = movies.Take(5)
+                .ToList();
 
             return movies;
         }
