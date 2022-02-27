@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRecommender.TestConsol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid", "SendGrid\SendGrid.csproj", "{A6C8513E-017B-427C-8EB7-46E4BFF283D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMDb", "TMDb\TMDb.csproj", "{DC3B784D-FDF1-4234-AC5B-960EF0E74563}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,18 @@ Global
 		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|x64.Build.0 = Release|Any CPU
 		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|x86.ActiveCfg = Release|Any CPU
 		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|x86.Build.0 = Release|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Debug|x64.Build.0 = Debug|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Debug|x86.Build.0 = Debug|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Release|x64.ActiveCfg = Release|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Release|x64.Build.0 = Release|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +78,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{865A3E85-D484-4CE2-9F18-06D3BEBE807B} = {DCE77608-17F7-437C-BA32-DDAA6411D1D6}
 		{A6C8513E-017B-427C-8EB7-46E4BFF283D9} = {DCE77608-17F7-437C-BA32-DDAA6411D1D6}
+		{DC3B784D-FDF1-4234-AC5B-960EF0E74563} = {DCE77608-17F7-437C-BA32-DDAA6411D1D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FF2F690-087E-4726-93C9-F7271F28A01B}

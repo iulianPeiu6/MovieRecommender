@@ -4,12 +4,15 @@ using SendGrid;
 using SendGrid.Models;
 using SendGrid.Options;
 using SendGrid.Services.Abstracts;
+using TMDb;
+using TMDb.Options;
 using Youtube;
 using Youtube.Options;
 using Youtube.Services.Abstracts;
 
 //await RunYoutubeConsoleTestsAsync();
-await RunSendGridConsoleTestsAsync();
+//await RunSendGridConsoleTestsAsync();
+await RunTMDbConsoleTestsAsync();
 
 async Task RunYoutubeConsoleTestsAsync()
 {
@@ -36,4 +39,13 @@ async Task RunSendGridConsoleTestsAsync()
         Body = "Test"
     };
     var result = await sendgridService.SendAsync(mail);
+}
+
+async Task RunTMDbConsoleTestsAsync()
+{
+    var services = new ServiceCollection()
+        .AddTMDb()
+        .BuildServiceProvider();
+
+    var config = services.GetRequiredService<IOptions<TMDbConfiguration>>();
 }

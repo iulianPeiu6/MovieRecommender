@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SendGrid\SendGrid.csproj" />
+    <ProjectReference Include="..\TMDb\TMDb.csproj" />
     <ProjectReference Include="..\Youtube\Youtube.csproj" />
   </ItemGroup>
 
