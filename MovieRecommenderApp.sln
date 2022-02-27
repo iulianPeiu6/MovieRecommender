@@ -5,9 +5,11 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DCE77608-17F7-437C-BA32-DDAA6411D1D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Youtube", "Youtube\Youtube.csproj", "{865A3E85-D484-4CE2-9F18-06D3BEBE807B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Youtube", "Youtube\Youtube.csproj", "{865A3E85-D484-4CE2-9F18-06D3BEBE807B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRecommender.TestConsole", "MovieRecommender.TestConsole\MovieRecommender.TestConsole.csproj", "{BFC6FA3B-591C-40B2-A022-440FD44C9C40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRecommender.TestConsole", "MovieRecommender.TestConsole\MovieRecommender.TestConsole.csproj", "{BFC6FA3B-591C-40B2-A022-440FD44C9C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGrid", "SendGrid\SendGrid.csproj", "{A6C8513E-017B-427C-8EB7-46E4BFF283D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,12 +45,25 @@ Global
 		{BFC6FA3B-591C-40B2-A022-440FD44C9C40}.Release|x64.Build.0 = Release|Any CPU
 		{BFC6FA3B-591C-40B2-A022-440FD44C9C40}.Release|x86.ActiveCfg = Release|Any CPU
 		{BFC6FA3B-591C-40B2-A022-440FD44C9C40}.Release|x86.Build.0 = Release|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Debug|x64.Build.0 = Debug|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Debug|x86.Build.0 = Debug|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|x64.ActiveCfg = Release|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|x64.Build.0 = Release|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|x86.ActiveCfg = Release|Any CPU
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{865A3E85-D484-4CE2-9F18-06D3BEBE807B} = {DCE77608-17F7-437C-BA32-DDAA6411D1D6}
+		{A6C8513E-017B-427C-8EB7-46E4BFF283D9} = {DCE77608-17F7-437C-BA32-DDAA6411D1D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FF2F690-087E-4726-93C9-F7271F28A01B}
