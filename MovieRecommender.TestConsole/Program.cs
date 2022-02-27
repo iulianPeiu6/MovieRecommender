@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using SendGrid;
+using SendGrid.Models;
 using SendGrid.Options;
+using SendGrid.Services.Abstracts;
 using Youtube;
 using Youtube.Options;
 using Youtube.Services.Abstracts;
@@ -27,4 +29,11 @@ async Task RunSendGridConsoleTestsAsync()
         .BuildServiceProvider();
 
     var config = services.GetRequiredService<IOptions<SendGridConfiguration>>();
+    var sendgridService = services.GetRequiredService<ISendGridService>();
+    var mail = new Mail
+    {
+        ReceiverEmailAddress = "iulianpeiu6@gmail.com",
+        Body = "Test"
+    };
+    var result = await sendgridService.SendAsync(mail);
 }

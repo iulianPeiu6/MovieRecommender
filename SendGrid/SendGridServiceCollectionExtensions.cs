@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SendGrid.Options;
+using SendGrid.Services;
+using SendGrid.Services.Abstracts;
 using System.Reflection;
 
 namespace SendGrid
@@ -18,6 +20,8 @@ namespace SendGrid
                 .Build();
 
             services.Configure<SendGridConfiguration>(options => configuration.Bind("SendGridConfig", options));
+
+            services.AddTransient<ISendGridService, SendGridService>();
 
             return services;
         }

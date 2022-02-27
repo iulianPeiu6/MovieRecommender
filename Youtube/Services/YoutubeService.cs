@@ -1,9 +1,8 @@
-﻿using Microsoft.Extensions.Options;
-using System.Net.Http;
+﻿using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using Youtube.Options;
 using Youtube.Services.Abstracts;
-using Microsoft.AspNetCore.WebUtilities;
-using Newtonsoft.Json;
 
 namespace Youtube.Services
 {
@@ -31,7 +30,7 @@ namespace Youtube.Services
             var parsedResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
 
             var videoId = parsedResponse.items[0].id.videoId;
-            
+
             return $"{config.WebUiEndpoint.Watch}?v={videoId}";
         }
     }
