@@ -19,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MovieRecommender.Application\MovieRecommender.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="sendgridSettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

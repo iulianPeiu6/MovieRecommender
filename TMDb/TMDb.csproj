@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MovieRecommender.Application\MovieRecommender.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="tmdbSettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieRecommender.WebApi.Services;
-using TMDb.Models;
+using MovieRecommender.Application.Interfaces;
+using MovieRecommender.Domain.Entities;
 
 namespace MovieRecommender.WebApi.Controllers.v1
 {
@@ -17,9 +17,9 @@ namespace MovieRecommender.WebApi.Controllers.v1
         }
 
         [HttpPost]
-        public bool SendRecommendationsViaEmail(IList<Movie> movies)
+        public async Task<bool> SendRecommendationsViaEmailAsync(IList<Movie> movies, string email)
         {
-            return movieRecommendationService.SendRecommendationViaMail(movies);
+            return await movieRecommendationService.SendRecommendationViaMailAsync(movies, email);
         }
     }
 }

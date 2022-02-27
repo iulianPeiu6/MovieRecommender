@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieRecommender.WebApi.Services;
-using TMDb.Models;
+using MovieRecommender.Application.Interfaces;
+using MovieRecommender.Domain.Entities;
 
 namespace MovieRecommender.WebApi.Controllers.v1
 {

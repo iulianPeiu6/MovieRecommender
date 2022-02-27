@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
+using MovieRecommender.Domain.Entities;
 using Newtonsoft.Json;
-using SendGrid.Models;
 using SendGrid.Options;
 using SendGrid.Services.Abstracts;
 using System.Net.Mail;
@@ -47,6 +47,7 @@ namespace SendGrid.Services
 
         private HttpContent? BuildRequestContentForSend(Mail mail)
         {
+
             var contentObject = new
             {
                 personalizations = new[]
@@ -63,7 +64,7 @@ namespace SendGrid.Services
                 subject = mail.Subject,
                 content = new[]
                 {
-                    new { type = "text/plain", value = mail.Body }
+                    new { type = "text/html", value = mail.Body }
                 }
             };
 

@@ -1,4 +1,4 @@
-﻿namespace SendGrid.Models
+﻿namespace MovieRecommender.Domain.Entities
 {
     public class Mail
     {

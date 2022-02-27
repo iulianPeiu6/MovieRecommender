@@ -1,4 +1,4 @@
-﻿using SendGrid.Models;
+﻿using MovieRecommender.Domain.Entities;
 
 namespace SendGrid.Services.Abstracts
 {

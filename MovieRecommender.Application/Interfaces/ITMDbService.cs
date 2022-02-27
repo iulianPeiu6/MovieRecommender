@@ -1,4 +1,4 @@
-﻿using TMDb.Models;
+﻿using MovieRecommender.Domain.Entities;
 
 namespace TMDb.Services.Abstracts
 {

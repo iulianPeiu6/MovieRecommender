@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using MovieRecommender.Domain.Entities;
 using SendGrid;
-using SendGrid.Models;
 using SendGrid.Options;
 using SendGrid.Services.Abstracts;
 using TMDb;

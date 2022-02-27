@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
+using MovieRecommender.Domain.Entities;
 using Newtonsoft.Json;
-using TMDb.Models;
 using TMDb.Options;
 using TMDb.Services.Abstracts;
 
