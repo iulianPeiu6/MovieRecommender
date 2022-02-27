@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Youtube.Options;
+using Youtube.Services;
+using Youtube.Services.Abstracts;
 
 namespace Youtube
 {
@@ -18,6 +20,8 @@ namespace Youtube
                 .Build();
 
             services.Configure<YoutubeConfiguration>(options => configuration.Bind("YoutubeConfig", options));
+
+            services.AddTransient<IYoutubeService, YoutubeService>();
 
             return services;
         }
