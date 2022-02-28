@@ -27,7 +27,7 @@ namespace MovieRecommender.Application.Services
         {
             var movies = await tmdbService.GetMostPopularMoviesAsync();
 
-            //await UpdateMoviesWithYoutubeTrailerLinkAsync(movies);
+            await UpdateMoviesWithYoutubeTrailerLinkAsync(movies);
 
             return movies;
         }
@@ -83,7 +83,7 @@ namespace MovieRecommender.Application.Services
 
                 body.Append($"<td style=\"border: 1px solid #dddddd; text-align: center; padding: 8px; display:block;\">{++row}</th>");
                 body.Append($"<td style=\"border: 1px solid #dddddd; text-align: left; padding: 8px;\">{movie.Title}</th>");
-                body.Append($"<td style=\"border: 1px solid #dddddd; text-align: left; padding: 8px;\">{movie.ReleaseDate.ToString("dd/MM/YYYY")}</th>");
+                body.Append($"<td style=\"border: 1px solid #dddddd; text-align: left; padding: 8px;\">{movie.ReleaseDate.ToString("dd/MM/yyyy")}</th>");
                 body.Append($"<td style=\"border: 1px solid #dddddd; text-align: left; padding: 8px;\">{movie.Rating.ToString("#.00#")} | {movie.NumberOfRatings}</th>");
                 body.Append($"<td style=\"border: 1px solid #dddddd; text-align: center; padding: 8px;\"><a href=\"{movie.YoutubeTrailerLink}\">View Trailer</a></th>");
                 body.Append("</tr>");

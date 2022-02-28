@@ -9,6 +9,7 @@ namespace MovieRecommender.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddTransient<IMovieRecommendationService, MovieRecommendationService>();
+            services.AddTransient<IAPIsReportingService, APIsReportingService>();
 
             return services;
         }

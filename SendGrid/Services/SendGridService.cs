@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using MovieRecommender.Application.Interfaces;
 using MovieRecommender.Domain.Entities;
 using Newtonsoft.Json;
 using SendGrid.Options;
@@ -10,7 +11,7 @@ namespace SendGrid.Services
 {
     public class SendGridService : SendGridServiceBase, ISendGridService
     {
-        public SendGridService(IOptions<SendGridConfiguration> config) : base(config)
+        public SendGridService(IOptions<SendGridConfiguration> config, IRequestLogRepository requestLogs) : base(config, requestLogs)
         {
         }
 
@@ -22,9 +23,9 @@ namespace SendGrid.Services
             request.Headers.Add("Authorization", $"Bearer {config.ApiKey}");
             request.Content = BuildRequestContentForSend(mail);
 
-            var response = await client.SendAsync(request);
+            var success = await MakeRequest(request);
 
-            return response.IsSuccessStatusCode;
+            return success;
         }
 
         private void Validate(Mail mail)

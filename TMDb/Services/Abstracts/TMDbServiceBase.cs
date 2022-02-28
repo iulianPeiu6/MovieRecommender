@@ -10,12 +10,12 @@ namespace TMDb.Services.Abstracts
     {
         protected readonly TMDbConfiguration config;
         protected readonly HttpClient client;
-        private readonly IRequestLogRepository repository;
+        private readonly IRequestLogRepository requestLogs;
 
-        public TMDbServiceBase(IOptions<TMDbConfiguration> config, IRequestLogRepository repository)
+        public TMDbServiceBase(IOptions<TMDbConfiguration> config, IRequestLogRepository requestLogs)
         {
             this.config = config.Value;
-            this.repository = repository;
+            this.requestLogs = requestLogs;
             client = new HttpClient();
         }
 
@@ -39,7 +39,7 @@ namespace TMDb.Services.Abstracts
                 ResponseContent = responseContent,
                 Latency = watch.ElapsedMilliseconds
             };
-            repository.Add(requestLog);
+            requestLogs.Add(requestLog);
 
             return responseContent;
         }

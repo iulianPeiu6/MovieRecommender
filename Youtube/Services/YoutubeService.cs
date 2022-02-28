@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
+using MovieRecommender.Application.Interfaces;
 using Newtonsoft.Json;
 using Youtube.Options;
 using Youtube.Services.Abstracts;
@@ -8,7 +9,7 @@ namespace Youtube.Services
 {
     public class YoutubeService : YoutubeServiceBase, IYoutubeService
     {
-        public YoutubeService(IOptions<YoutubeConfiguration> config) : base(config)
+        public YoutubeService(IOptions<YoutubeConfiguration> config, IRequestLogRepository requestLogs) : base(config, requestLogs)
         {
         }
 
@@ -21,13 +22,13 @@ namespace Youtube.Services
                 ["key"] = config.ApiKey
             };
 
-            var request = QueryHelpers.AddQueryString(config.WebApiEndpoint.SearchV3, query);
+            var url = QueryHelpers.AddQueryString(config.WebApiEndpoint.SearchV3, query);
 
-            var response = await client.GetAsync(request);
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-            var responseContent = await response.Content.ReadAsStringAsync();
+            var response = await MakeRequest(request);
 
-            var parsedResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
+            var parsedResponse = JsonConvert.DeserializeObject<dynamic>(response);
 
             var videoId = string.Empty;
             try

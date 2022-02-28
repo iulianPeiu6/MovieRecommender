@@ -10,7 +10,7 @@ namespace TMDb.Services
 {
     public class TMDbService : TMDbServiceBase, ITMDbService
     {
-        public TMDbService(IOptions<TMDbConfiguration> config, IRequestLogRepository repository) : base(config, repository)
+        public TMDbService(IOptions<TMDbConfiguration> config, IRequestLogRepository requestLogs) : base(config, requestLogs)
         {
         }
 
