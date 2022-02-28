@@ -17,6 +17,7 @@ namespace MovieRecommender.WebApi.Controllers.v1
         }
 
         [HttpGet]
+        [Route("GetRecommendations")]
         public async Task<IList<Movie>> GetRecommendationsAsync()
         {
             var movies = await movieRecommendationService.GetRecommendationsAsync();

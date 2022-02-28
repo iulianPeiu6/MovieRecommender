@@ -16,9 +16,18 @@ namespace MovieRecommender.WebApi.Controllers.v1
             this.movieRecommendationService = movieRecommendationService;
         }
 
+        //[HttpPost]
+        //[Route("SendRecommendationsViaEmail")]
+        //public async Task<bool> SendRecommendationsViaEmailAsync(IList<Movie> movies, string email)
+        //{
+        //    return await movieRecommendationService.SendRecommendationViaMailAsync(movies, email);
+        //}
+
         [HttpPost]
-        public async Task<bool> SendRecommendationsViaEmailAsync(IList<Movie> movies, string email)
+        [Route("SendRecommendationsViaEmail")]
+        public async Task<bool> SendRecommendationsViaEmailAsync(string email)
         {
+            var movies = await movieRecommendationService.GetRecommendationsAsync();
             return await movieRecommendationService.SendRecommendationViaMailAsync(movies, email);
         }
     }

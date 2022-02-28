@@ -15,7 +15,7 @@ namespace MovieRecommender.Application.Services
         {
             var report = new Report
             {
-                APIRequests = requestLogs.GetAll()
+                APIRequests = requestLogs.GetAll().Take(50)
             };
 
             return report;
