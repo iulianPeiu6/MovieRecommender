@@ -57,7 +57,7 @@ namespace TMDb.Services
                 });
             }
 
-            movies = movies.Take(5)
+            movies = movies.Take(10)
                 .ToList();
 
             return movies;

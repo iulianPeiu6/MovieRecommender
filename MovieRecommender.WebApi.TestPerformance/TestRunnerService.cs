@@ -21,9 +21,15 @@ namespace MovieRecommender.WebApi.TestPerformance
         
         public async Task Run()
         /**
-         * 
-         * 
-         * 
+         * -------------------------------------------------------------------
+         * |Average response time for a 50 request batch:        11786.2 (ms)|
+         * |-----------------------------------------------------------------|
+         * |Average response time for a single request:          235.724 (ms)|
+         * |-----------------------------------------------------------------|
+         * |Fastest response time for a batch of 50 requests:       9652 (ms)|
+         * |-----------------------------------------------------------------|
+         * |Slowest response time for a batch of 50 requests:      17037 (ms)|
+         * -------------------------------------------------------------------
          */
         {
             logger.LogInformation("Start testing");
