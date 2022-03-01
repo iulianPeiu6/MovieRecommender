@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieRecommender.Application.Interfaces;
-using MovieRecommender.Domain.Entities;
 
 namespace MovieRecommender.WebApi.Controllers.v1
 {
@@ -15,13 +14,6 @@ namespace MovieRecommender.WebApi.Controllers.v1
         {
             this.movieRecommendationService = movieRecommendationService;
         }
-
-        //[HttpPost]
-        //[Route("SendRecommendationsViaEmail")]
-        //public async Task<bool> SendRecommendationsViaEmailAsync(IList<Movie> movies, string email)
-        //{
-        //    return await movieRecommendationService.SendRecommendationViaMailAsync(movies, email);
-        //}
 
         [HttpPost]
         [Route("SendRecommendationsViaEmail")]

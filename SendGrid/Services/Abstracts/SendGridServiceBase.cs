@@ -37,7 +37,7 @@ namespace SendGrid.Services.Abstracts
                 RequestContent = request.Content?.ToString(),
                 StatusCode = response.StatusCode.ToString(),
                 ResponseContent = responseContent,
-                Latency = watch.ElapsedMilliseconds
+                Latency = (int)watch.ElapsedMilliseconds
             };
             requestLogs.Add(requestLog);
 

@@ -4,15 +4,31 @@ import { Injectable } from '@angular/core';
 export class Report {
   constructor(
     public apiRequests: APIRequest[],
-    public title: string, 
-    public releaseDate: Date, 
-    public rating: number,
-    public posterUrl: string,
-    public popularity: number,
-    public numberOfRatings: number,
-    public overview: string,
-    public youtubeTrailerLink: string) { 
+    public numberOfRequestsOnYoutube: number, 
+    public numberOfRequestsOnTMDb: number, 
+    public numberOfRequestsOnSendGrid: number,
+    public meanLatencyForYoutube: number,
+    public meanLatencyForTMDb: number,
+    public meanLatencyForSendGrid: number,
+    public numberOfNotOkResponsesOnYoutube: number,
+    public numberOfNotOkResponsesOnTMDb: number,
+    public numberOfNotOkResponsesOnSendGrid: number,
+    public latenciesForYoutube: number[],
+    public latenciesForTMDb: number[],
+    public latenciesForSendGrid: number[],) { 
   }
+}
+
+export class NumberOfRequestsReport {
+  api!: string;
+  numberOfRequests!: number;
+}
+
+export class APIPerformanceReporting {
+  api!: string;
+  numberOfRequests!: number;
+  meanLatency!: number;
+  numberOfNotOkResponses!: number;
 }
 
 export class APIRequest {

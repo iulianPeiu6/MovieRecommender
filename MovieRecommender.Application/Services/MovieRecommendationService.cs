@@ -27,7 +27,7 @@ namespace MovieRecommender.Application.Services
         {
             var movies = await tmdbService.GetMostPopularMoviesAsync();
 
-            //await UpdateMoviesWithYoutubeTrailerLinkAsync(movies);
+            await UpdateMoviesWithYoutubeTrailerLinkAsync(movies);
 
             return movies;
         }

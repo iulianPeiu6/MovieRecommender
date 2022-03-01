@@ -13,9 +13,62 @@ namespace MovieRecommender.Application.Services
         }
         public Report GenerateReport()
         {
+            var requests = requestLogs.GetAll();
+
             var report = new Report
             {
-                APIRequests = requestLogs.GetAll().Take(50)
+                APIRequests = requests.Take(100),
+
+                LatenciesForTMDb = requests
+                    .Where(r => r.Provider == "TMDb")
+                    .Select(r => r.Latency),
+
+                LatenciesForYoutube = requests
+                    .Where(r => r.Provider == "Youtube")
+                    .Select(r => r.Latency),
+
+                LatenciesForSendGrid = requests
+                    .Where(r => r.Provider == "SendGrid")
+                    .Select(r => r.Latency),
+
+                MeanLatencyForTMDb = requests
+                    .Where(r => r.Provider == "TMDb")
+                    .Select(r => r.Latency)
+                    .Average(),
+
+                MeanLatencyForYoutube = requests
+                    .Where(r => r.Provider == "Youtube")
+                    .Select(r => r.Latency)
+                    .Average(),
+
+                MeanLatencyForSendGrid = requests
+                    .Where(r => r.Provider == "SendGrid")
+                    .Select(r => r.Latency)
+                    .Average(),
+
+                NumberOfRequestsOnTMDb = requests
+                    .Where(r => r.Provider == "TMDb")
+                    .Count(),
+
+                NumberOfRequestsOnYoutube = requests
+                    .Where(r => r.Provider == "Youtube")
+                    .Count(),
+
+                NumberOfRequestsOnSendGrid = requests
+                    .Where(r => r.Provider == "SendGrid")
+                    .Count(),
+
+                NumberOfNotOkResponsesOnTMDb = requests
+                    .Where(r => r.Provider == "TMDb" && r.StatusCode != "OK" && r.StatusCode != "Accepted")
+                    .Count(),
+
+                NumberOfNotOkResponsesOnYoutube = requests
+                    .Where(r => r.Provider == "Youtube" && r.StatusCode != "OK" && r.StatusCode != "Accepted")
+                    .Count(),
+
+                NumberOfNotOkResponsesOnSendGrid = requests
+                    .Where(r => r.Provider == "SendGrid" && r.StatusCode != "OK" && r.StatusCode != "Accepted")
+                    .Count()
             };
 
             return report;

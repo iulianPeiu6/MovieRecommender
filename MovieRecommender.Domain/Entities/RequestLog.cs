@@ -9,6 +9,6 @@
         public string RequestContent { get; set; }
         public string StatusCode { get; set; }
         public string ResponseContent { get; set; }
-        public long Latency { get; set; }
+        public int Latency { get; set; }
     }
 }
